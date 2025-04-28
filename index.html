@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Contact form | Lapupeh</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <script defer src="script.js"></script>
+
+</head>
+<body>
+  <main>
+    <form class="form">
+      <h1>Contact us</h1>
+      <div class="contact-form">
+      <div class="fullname">
+        <div class="firstname">
+          <label for="firstname">First Name <span class="asterisk">*</span></label>
+          <input type="text" id="firstname" name="firstName" aria-describedby="firstname-validation" autocomplete="name">
+          <span id="firstName-validation" class="validation-message hidden">This field is required</span>
+        </div>
+        <div class="lastname">
+          <label for="lastname">Last Name <span class="asterisk">*</span></label>
+          <input type="text" id="lastname" name="lastName" aria-describedby="lastname-validation" autocomplete="additional-name">
+          <span id="lastName-validation" class="validation-message hidden">This field is required</span>
+        </div>
+      </div>
+
+      <div class="email">
+        <label for="email">Email Address <span class="asterisk">*</span></label>
+        <input type="email" id="email" name="email" aria-describedby="email-validation" autocomplete="email">
+        <span id="email-validation" class="validation-message hidden">Please enter a valid email address</span>
+      </div>  
+      
+      <fieldset>
+        <legend>Query Type <span class="asterisk">*</span></legend>
+        <div class="query-options">
+          <div class="general">
+            <label for="general" class="general-option">
+              <input type="radio" name="query" id="general">General Enquiry
+            </label>
+        </div>
+        <div class="support">
+          <label for="support" class="support-option">
+            <input type="radio" name="query" id="support">Support Request
+          </label>
+        </div>
+    </div>
+    <span id="query-validation" class="validation-message hidden">Please select a query type</span>
+      </fieldset>
+      
+      <div class="message">
+        <label for="message">Message <span class="asterisk">*</span></label>
+        <textarea name="message" id="message" aria-describedby="message-validation"></textarea>
+        <span id="message-validation" class="validation-message hidden">This field is required</span>
+      </div>
+      
+      <div class="consent">
+        <div class="consent-check">
+          <input type="checkbox" id="checkbox" name ="check" aria-describedby="consent-validation">
+          <label for="checkbox">I hereby consent to being contacted by the team <span class="asterisk">*</span></label>
+        </div>
+      <span id="check-validation" class="validation-message hidden">To submit this form, please consent to being contacted</span>
+    </div>
+    
+    <button>Submit</button>
+  </div>
+</form>
+  <div class="success-message">
+    <div class="icon-message">
+      <img src="/assets/images/icon-success-check.svg" alt="Success icon" class="success-icon">
+      <h2>Message Sent!</h2>
+    </div>
+     <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+</main>
+</body>
+</html>
