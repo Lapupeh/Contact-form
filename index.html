@@ -19,12 +19,12 @@
       <div class="fullname">
         <div class="firstname">
           <label for="firstName">First Name <span class="asterisk">*</span></label>
-          <input type="text" id="firstName" name="firstName" aria-describedby="firstname-validation" autocomplete="name">
+          <input type="text" id="firstName" name="firstName" aria-describedby="firstName-validation" autocomplete="name">
           <span id="firstName-validation" class="validation-message hidden">This field is required</span>
         </div>
         <div class="lastname">
           <label for="lastName">Last Name <span class="asterisk">*</span></label>
-          <input type="text" id="lastName" name="lastName" aria-describedby="lastname-validation" autocomplete="additional-name">
+          <input type="text" id="lastName" name="lastName" aria-describedby="lastName-validation" autocomplete="additional-name">
           <span id="lastName-validation" class="validation-message hidden">This field is required</span>
         </div>
       </div>
@@ -35,7 +35,7 @@
         <span id="email-validation" class="validation-message hidden">Please enter a valid email address</span>
       </div>  
       
-      <fieldset id="query">
+      <fieldset id="query" aria-describedby="query-validation">
         <legend>Query Type <span class="asterisk">*</span></legend>
         <div class="query-options">
           <div class="general">
@@ -60,7 +60,7 @@
       <div id="errorSummary" role="alert" aria-live="assertive"></div>
       <div class="consent">
         <div class="consent-check">
-          <input type="checkbox" id="check" name ="check" aria-describedby="consent-validation">
+          <input type="checkbox" id="check" name ="check" aria-describedby="check-validation">
           <label for="check">I hereby consent to being contacted by the team <span class="asterisk">*</span></label>
         </div>
       <span id="check-validation" class="validation-message hidden">To submit this form, please consent to being contacted</span>
