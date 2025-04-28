@@ -18,13 +18,13 @@
       <div class="contact-form">
       <div class="fullname">
         <div class="firstname">
-          <label for="firstname">First Name <span class="asterisk">*</span></label>
-          <input type="text" id="firstname" name="firstName" aria-describedby="firstname-validation" autocomplete="name">
+          <label for="firstName">First Name <span class="asterisk">*</span></label>
+          <input type="text" id="firstName" name="firstName" aria-describedby="firstname-validation" autocomplete="name">
           <span id="firstName-validation" class="validation-message hidden">This field is required</span>
         </div>
         <div class="lastname">
-          <label for="lastname">Last Name <span class="asterisk">*</span></label>
-          <input type="text" id="lastname" name="lastName" aria-describedby="lastname-validation" autocomplete="additional-name">
+          <label for="lastName">Last Name <span class="asterisk">*</span></label>
+          <input type="text" id="lastName" name="lastName" aria-describedby="lastname-validation" autocomplete="additional-name">
           <span id="lastName-validation" class="validation-message hidden">This field is required</span>
         </div>
       </div>
@@ -35,7 +35,7 @@
         <span id="email-validation" class="validation-message hidden">Please enter a valid email address</span>
       </div>  
       
-      <fieldset>
+      <fieldset id="query">
         <legend>Query Type <span class="asterisk">*</span></legend>
         <div class="query-options">
           <div class="general">
@@ -57,11 +57,11 @@
         <textarea name="message" id="message" aria-describedby="message-validation"></textarea>
         <span id="message-validation" class="validation-message hidden">This field is required</span>
       </div>
-      
+      <div id="errorSummary" role="alert" aria-live="assertive"></div>
       <div class="consent">
         <div class="consent-check">
-          <input type="checkbox" id="checkbox" name ="check" aria-describedby="consent-validation">
-          <label for="checkbox">I hereby consent to being contacted by the team <span class="asterisk">*</span></label>
+          <input type="checkbox" id="check" name ="check" aria-describedby="consent-validation">
+          <label for="check">I hereby consent to being contacted by the team <span class="asterisk">*</span></label>
         </div>
       <span id="check-validation" class="validation-message hidden">To submit this form, please consent to being contacted</span>
     </div>
@@ -69,7 +69,7 @@
     <button>Submit</button>
   </div>
 </form>
-  <div class="success-message">
+  <div class="success-message" id="successMessage" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="icon-message">
       <img src="/assets/images/icon-success-check.svg" alt="Success icon" class="success-icon">
       <h2>Message Sent!</h2>

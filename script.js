@@ -2,7 +2,19 @@
 
 const form = document.querySelector('.form');
 const body = document.querySelector('body');
-const successMessage = document.querySelector('.success-message')
+const successMessage = document.querySelector('.success-message');
+const errorSummary = document.getElementById('errorSummary');
+
+let errors = [];
+
+const errorFields = {
+  firstName: 'First name is required.',
+  lastName: 'Last name is required.',
+  email: 'Email is required.',
+  message: 'Message is required.',
+  query: 'Please select a query type.',
+  check: 'Please check the consent box to submit the form.'
+};
 
 const requiredFields = [
   {name: 'firstName'},
@@ -25,12 +37,23 @@ function handleSubmit(e) {
         isValid = false;
         const errorElement = document.getElementById(`${field.name}-validation`);
         errorElement.classList.remove('hidden');
+        errors.push(errorFields[field.name]);
+        document.getElementById(field.name).setAttribute('aria-invalid', 'true');
         form.scrollIntoView({ behavior: 'smooth' });
+
       } else {
         const errorElement = document.getElementById(`${field.name}-validation`);
         errorElement.classList.add('hidden');
+        document.getElementById(field.name).removeAttribute('aria-invalid');
+       
       }
+      
     });
+
+    if (errors.length > 0) {
+      errorSummary.innerHTML = errors.map(error => `<div>${error}</div>`).join('');
+      errors = []; 
+    } 
 
     if (isValid) {
       body.scrollIntoView({ behavior: 'smooth' });
